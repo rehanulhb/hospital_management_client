@@ -8,9 +8,8 @@ import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 import { toast } from "sonner";
 import DoctorFormDialog from "./DoctorFormDialog";
-
-import DoctorViewDetailDialog from "./DoctorViewDetailDialog";
 import { doctorsColumns } from "./doctorsColumns";
+import DoctorViewDetailDialog from "./DoctorViewDetailDialog";
 import { softDeleteDoctor } from "@/components/services/admin/doctorManagement";
 
 interface DoctorsTableProps {

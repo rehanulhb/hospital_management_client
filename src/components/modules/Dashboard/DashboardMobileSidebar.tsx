@@ -5,7 +5,6 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { SheetTitle } from "@/components/ui/sheet";
 import { getIconComponent } from "@/lib/icon-mapper";
-
 import { cn } from "@/lib/utils";
 import { NavSection } from "@/types/dashboard.interface";
 import { UserInfo } from "@/types/user.interface";
@@ -30,7 +29,7 @@ const DashboardMobileSidebar = ({
       <div className="flex h-16 items-center border-b px-6">
         <Link href={dashboardHome}>
           <span className="text-xl font-bold text-primary">
-            Hospital Management
+            Hospital Management System
           </span>
         </Link>
       </div>

@@ -1,5 +1,5 @@
-const Appointments = () => {
-  return <div>DoctorAppointmentPage</div>;
+const DoctorAppointmentsPage = () => {
+  return <div>DoctorAppointmentsPage</div>;
 };
 
-export default Appointments;
+export default DoctorAppointmentsPage;

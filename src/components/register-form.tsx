@@ -6,8 +6,9 @@ import { toast } from "sonner";
 import { Button } from "./ui/button";
 import { Field, FieldDescription, FieldGroup, FieldLabel } from "./ui/field";
 import { Input } from "./ui/input";
-import { registerPatient } from "./services/auth/registerPatient";
+
 import InputFieldError from "./shared/InputFieldError";
+import { registerPatient } from "@/services/auth/registerPatient";
 
 const RegisterForm = () => {
   const [state, formAction, isPending] = useActionState(registerPatient, null);

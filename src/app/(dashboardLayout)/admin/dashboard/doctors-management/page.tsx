@@ -1,11 +1,12 @@
 import DoctorFilters from "@/components/modules/Admin/DoctorsManagement/DoctorFilters";
 import DoctorsManagementHeader from "@/components/modules/Admin/DoctorsManagement/DoctorsManagementHeader";
 import DoctorsTable from "@/components/modules/Admin/DoctorsManagement/DoctorsTable";
-import { getDoctors } from "@/components/services/admin/doctorManagement";
-import { getSpecialities } from "@/components/services/admin/specialitiesManagement";
+
 import TablePagination from "@/components/shared/TablePagination";
 import { TableSkeleton } from "@/components/shared/TableSkeleton";
 import { queryStringFormatter } from "@/lib/formatters";
+import { getDoctors } from "@/services/admin/doctorManagement";
+import { getSpecialities } from "@/services/admin/specialitiesManagement";
 
 import { Suspense } from "react";
 
@@ -18,7 +19,7 @@ const AdminDoctorsManagementPage = async ({
   const queryString = queryStringFormatter(searchParamsObj); // {searchTerm: "John", speciality: "Cardiology" => "?searchTerm=John&speciality=Cardiology"}
   const specialitiesResult = await getSpecialities();
   const doctorsResult = await getDoctors(queryString);
-
+  console.log({ doctorsResult });
   const totalPages = Math.ceil(
     (doctorsResult?.meta?.total || 1) / (doctorsResult?.meta?.limit || 1),
   );

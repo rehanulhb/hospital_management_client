@@ -4,7 +4,7 @@ import { getNavItemsByRole } from "@/lib/navItems.config";
 import { NavSection } from "@/types/dashboard.interface";
 import { UserInfo } from "@/types/user.interface";
 import DashboardSidebarContent from "./DashboardSidebarContent";
-import { getUserInfo } from "@/components/services/auth/getUserInfo";
+import { getUserInfo } from "@/services/auth/getUserInfo";
 
 const DashboardSidebar = async () => {
   const userInfo = (await getUserInfo()) as UserInfo;

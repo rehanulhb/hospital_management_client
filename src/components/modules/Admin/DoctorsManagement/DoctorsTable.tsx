@@ -1,7 +1,6 @@
 "use client";
 import DeleteConfirmationDialog from "@/components/shared/DeleteConfirmationDialog";
 import ManagementTable from "@/components/shared/ManagementTable";
-
 import { IDoctor } from "@/types/doctor.interface";
 import { ISpecialty } from "@/types/specialities.interface";
 import { useRouter } from "next/navigation";
@@ -10,7 +9,7 @@ import { toast } from "sonner";
 import DoctorFormDialog from "./DoctorFormDialog";
 import { doctorsColumns } from "./doctorsColumns";
 import DoctorViewDetailDialog from "./DoctorViewDetailDialog";
-import { softDeleteDoctor } from "@/components/services/admin/doctorManagement";
+import { softDeleteDoctor } from "@/services/admin/doctorManagement";
 
 interface DoctorsTableProps {
   doctors: IDoctor[];

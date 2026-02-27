@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "../ui/sheet";
 import LogoutButton from "./LogoutButton";
-import { getCookie } from "../services/auth/tokenHandlers";
+import { getCookie } from "@/services/auth/tokenHandlers";
 
 const PublicNavbar = async () => {
   const navItems = [

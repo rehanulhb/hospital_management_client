@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 import { toast } from "sonner";
 import { specialitiesColumns } from "./specialitiesColumns";
-import { deleteSpeciality } from "@/components/services/admin/specialitiesManagement";
+import { deleteSpeciality } from "@/services/admin/specialitiesManagement";
 
 interface SpecialityTableProps {
   specialities: ISpecialty[];

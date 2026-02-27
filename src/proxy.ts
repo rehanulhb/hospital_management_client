@@ -7,10 +7,7 @@ import {
   isAuthRoute,
   UserRole,
 } from "./lib/auth-utils";
-import {
-  deleteCookie,
-  getCookie,
-} from "./components/services/auth/tokenHandlers";
+import { deleteCookie, getCookie } from "./services/auth/tokenHandlers";
 
 // This function can be marked `async` if using `await` inside
 export async function proxy(request: NextRequest) {

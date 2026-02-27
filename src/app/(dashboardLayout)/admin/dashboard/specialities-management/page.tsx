@@ -1,14 +1,14 @@
 import SpecialitiesManagementHeader from "@/components/modules/Admin/SpecialitiesManagement/SpecialitiesManagementHeader";
 import SpecialitiesTable from "@/components/modules/Admin/SpecialitiesManagement/SpecialitiesTable";
-import { getSpecialities } from "@/components/services/admin/specialitiesManagement";
+
 import RefreshButton from "@/components/shared/RefreshButton";
 import { TableSkeleton } from "@/components/shared/TableSkeleton";
+import { getSpecialities } from "@/services/admin/specialitiesManagement";
 
 import { Suspense } from "react";
 
 const AdminSpecialitiesManagementPage = async () => {
   const result = await getSpecialities();
-
   return (
     <div className="space-y-6">
       <SpecialitiesManagementHeader />

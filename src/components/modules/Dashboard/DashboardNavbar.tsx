@@ -1,8 +1,9 @@
 import { getDefaultDashboardRoute } from "@/lib/auth-utils";
 import { getNavItemsByRole } from "@/lib/navItems.config";
-import { getUserInfo } from "@/components/services/auth/getUserInfo";
+
 import { UserInfo } from "@/types/user.interface";
 import DashboardNavbarContent from "./DashboardNavbarContent";
+import { getUserInfo } from "@/services/auth/getUserInfo";
 
 const DashboardNavbar = async () => {
   const userInfo = (await getUserInfo()) as UserInfo;

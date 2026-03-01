@@ -1,14 +1,12 @@
 "use client";
 
+import { registerPatient } from "@/services/auth/registerPatient";
 import { useActionState, useEffect } from "react";
 import { toast } from "sonner";
-
+import InputFieldError from "./shared/InputFieldError";
 import { Button } from "./ui/button";
 import { Field, FieldDescription, FieldGroup, FieldLabel } from "./ui/field";
 import { Input } from "./ui/input";
-
-import InputFieldError from "./shared/InputFieldError";
-import { registerPatient } from "@/services/auth/registerPatient";
 
 const RegisterForm = () => {
   const [state, formAction, isPending] = useActionState(registerPatient, null);

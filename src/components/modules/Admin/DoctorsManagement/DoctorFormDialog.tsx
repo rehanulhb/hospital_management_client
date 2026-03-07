@@ -16,14 +16,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useSpecialtySelection } from "@/hooks/specialtyHooks/useSpecialtySelection";
-
+import { createDoctor, updateDoctor } from "@/services/admin/doctorManagement";
 import { IDoctor } from "@/types/doctor.interface";
 import { ISpecialty } from "@/types/specialities.interface";
 import Image from "next/image";
 import { useActionState, useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import SpecialtyMultiSelect from "./SpecialtyMultiSelect";
-import { createDoctor, updateDoctor } from "@/services/admin/doctorManagement";
 
 interface IDoctorFormDialogProps {
   open: boolean;
@@ -60,6 +59,8 @@ const DoctorFormDialog = ({
     null,
   );
 
+  const prevStateRef = useRef(state);
+
   const handleClose = () => {
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
@@ -82,6 +83,9 @@ const DoctorFormDialog = ({
   };
 
   useEffect(() => {
+    if (state === prevStateRef.current) return;
+    prevStateRef.current = state;
+
     if (state?.success) {
       toast.success(state.message);
       if (formRef.current) {
@@ -89,7 +93,7 @@ const DoctorFormDialog = ({
       }
       onSuccess();
       onClose();
-    } else if (state && !state.success) {
+    } else if (state && !state.success && state.message) {
       toast.error(state.message);
 
       if (selectedFile && fileInputRef.current) {

@@ -93,12 +93,13 @@ function PublicFooter() {
               <br />
               Health City, HC 12345
               <br />
-              contact@phdoc.com
+              contact@hms.com
             </p>
           </div>
         </div>
         <div className="mt-8 border-t pt-4 text-center text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} PH Doc. All Rights Reserved.
+          &copy; {new Date().getFullYear()} Hospital Management System. All
+          Rights Reserved.
         </div>
       </div>
     </footer>
